@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useEffect, useState, type ReactNode } from "react";
 
-type Theme = "dark" | "light";
+type Theme = "dark";
 
 type ThemeProviderProps = {
   children: ReactNode;
@@ -27,41 +27,21 @@ export function ThemeProvider({
   defaultTheme = "dark",
   storageKey = "portfolio-theme",
 }: ThemeProviderProps) {
-  const [theme, setTheme] = useState<Theme>(defaultTheme);
-  const [mounted, setMounted] = useState(false);
+  const [theme] = useState<Theme>(defaultTheme);
 
+  // Always set dark mode on mount
   useEffect(() => {
-    setMounted(true);
-    const stored = localStorage.getItem(storageKey) as Theme | null;
-    if (stored) {
-      setTheme(stored);
-    } else if (defaultTheme) {
-      setTheme(defaultTheme);
-    }
-  }, [defaultTheme, storageKey]);
-
-  useEffect(() => {
-    if (!mounted) return;
-
     const root = window.document.documentElement;
     root.classList.remove("light", "dark");
     root.classList.add(theme);
     root.setAttribute("data-theme", theme);
     localStorage.setItem(storageKey, theme);
-  }, [theme, storageKey, mounted]);
+  }, [theme, storageKey]);
 
   const value = {
     theme,
-    setTheme: (theme: Theme) => {
-      localStorage.setItem(storageKey, theme);
-      setTheme(theme);
-    },
+    setTheme: () => null, // No-op since we only support dark
   };
-
-  // Prevent hydration mismatch
-  if (!mounted) {
-    return <div style={{ visibility: "hidden" }}>{children}</div>;
-  }
 
   return (
     <ThemeProviderContext.Provider value={value}>

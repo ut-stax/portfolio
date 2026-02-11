@@ -4,45 +4,20 @@
 
 @layer base {
   :root {
-    /* Light theme — explicit dark text colors */
-    --background: 0 0% 100%;
-    --background-secondary: 0 0% 96%;
-    --background-tertiary: 0 0% 94%;
-    --foreground: 222 87% 8%;
-    --primary: 38 92% 50%;
-    --primary-foreground: 0 0% 100%;
-    --primary-hover: 38 92% 45%;
-    --secondary: 220 14% 92%;
-    --secondary-foreground: 222 81% 12%;
-    --muted: 220 14% 92%;
-    --muted-foreground: 220 9% 46%;
-    --accent: 220 14% 92%;
-    --accent-foreground: 222 81% 12%;
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 38 92% 50%;
-    --shadow-glow: 0 0 20px rgba(245, 158, 11, 0.18);
-    --shadow-glow-lg: 0 0 40px rgba(245, 158, 11, 0.25);
-  }
-
-  /* Dark theme */
-  [data-theme="dark"],
-  .dark {
+    /* Dark theme only */
     --background: 220 6% 5%;
     --background-secondary: 220 6% 9%;
     --background-tertiary: 220 6% 12%;
-    --foreground: 220 10% 92%;
+    --foreground: 220 10% 98%;
     --primary: 38 92% 50%;
     --primary-foreground: 0 0% 100%;
     --primary-hover: 38 92% 42%;
     --secondary: 220 11% 22%;
-    --secondary-foreground: 220 10% 94%;
+    --secondary-foreground: 220 10% 96%;
     --muted: 220 11% 22%;
-    --muted-foreground: 220 7% 66%;
+    --muted-foreground: 220 5% 75%;
     --accent: 220 11% 22%;
-    --accent-foreground: 220 10% 94%;
+    --accent-foreground: 220 10% 96%;
     --destructive: 0 62% 42%;
     --destructive-foreground: 0 0% 98%;
     --border: 220 11% 18%;
@@ -65,10 +40,9 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
-    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
-  /* Explicit text color assignments to prevent inheritance issues */
+  /* Explicit text color assignments - lighter for visibility */
   h1, h2, h3, h4, h5, h6 {
     @apply text-foreground;
   }
@@ -82,6 +56,11 @@
   [class*="bg-background-secondary"],
   [class*="bg-background-tertiary"] {
     @apply text-foreground;
+  }
+
+  /* Muted text - lighter for readability */
+  .text-muted {
+    color: hsl(var(--muted-foreground) / 0.9);
   }
 
   ::selection {
@@ -131,7 +110,7 @@
   }
 
   .btn-ghost {
-    @apply inline-flex items-center justify-center px-6 py-3 text-muted-foreground font-medium rounded-md transition-all duration-200 hover:text-foreground hover:bg-background-secondary;
+    @apply inline-flex items-center justify-center px-6 py-3 text-foreground/80 font-medium rounded-md transition-all duration-200 hover:text-foreground hover:bg-background-secondary;
   }
 
   .link-underline {
