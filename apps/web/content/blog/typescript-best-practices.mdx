@@ -1,0 +1,184 @@
+---
+title: "TypeScript Best Practices for Clean Code"
+excerpt: "Master TypeScript with these essential best practices for writing maintainable, type-safe code that scales."
+category: "Tutorial"
+tags: ["TypeScript", "Programming", "Best Practices"]
+publishedAt: "2025-01-10"
+readTime: 5
+featured: true
+---
+
+# TypeScript Best Practices for Clean Code
+
+TypeScript has become the standard for building large-scale JavaScript applications. Here are essential best practices to write clean, maintainable TypeScript code.
+
+## Enable Strict Mode
+
+Always enable strict mode in your `tsconfig.json`. This enables a set of TypeScript checking rules that help catch potential bugs early.
+
+```json
+{
+  "compilerOptions": {
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true
+  }
+}
+```
+
+## Avoid `any` Type
+
+Never use `any` when you can use more specific types. Using `any` defeats the purpose of TypeScript.
+
+```typescript
+// ❌ Bad
+function processData(data: any) {
+  return data.title.toLowerCase()
+}
+
+// ✅ Good
+interface User {
+  id: number
+  title: string
+}
+
+function processData(user: User) {
+  return user.title.toLowerCase()
+}
+```
+
+## Use Type Inference
+
+TypeScript can automatically infer types in many situations. Let it do its job instead of explicitly typing everything.
+
+```typescript
+// ✅ TypeScript automatically infers this as string[]
+const colors = ['red', 'green', 'blue']
+
+// ✅ Automatically infers the return type as number
+function add(a: number, b: number) {
+  return a + b
+}
+```
+
+## Define Interfaces for Object Shapes
+
+Use interfaces to define the shape of objects. This makes your code more readable and maintainable.
+
+```typescript
+interface Product {
+  id: string
+  name: string
+  price: number
+  description?: string  // Optional property
+  category: string
+}
+
+function displayProduct(product: Product): string {
+  return `${product.name} - $${product.price}`
+}
+```
+
+## Use Union Types for Related Values
+
+When a value can be one of several types, use union types.
+
+```typescript
+// ✅ Good
+type Status = 'pending' | 'active' | 'completed' | 'failed'
+
+interface Task {
+  id: number
+  status: Status
+}
+
+// ✅ Better
+function getTaskStatus(status: Status): string {
+  switch (status) {
+    case 'pending': return 'Task is pending'
+    case 'active': return 'Task is in progress'
+    case 'completed': return 'Task is done'
+    case 'failed': return 'Task failed'
+  }
+}
+```
+
+## Use Generics for Reusable Functions
+
+Generics allow you to create reusable components that work with multiple types.
+
+```typescript
+// ✅ Generic function
+function getFirstItem<T>(array: T[]): T | undefined {
+  return array[0]
+}
+
+// ✅ Usage
+const firstString = getFirstItem(['a', 'b', 'c'])  // type: string | undefined
+const firstNumber = getFirstItem([1, 2, 3])        // type: number | undefined
+```
+
+## Prefer Interfaces for Object Types
+
+Use interfaces for object shapes and type aliases for unions, intersections, and other complex types.
+
+```typescript
+// ✅ Interface for object shape
+interface Point {
+  x: number
+  y: number
+}
+
+// ✅ Type alias for union type
+type StatusCode = 200 | 400 | 404 | 500
+
+// ✅ Type alias for intersection type
+type ExtendedPoint = Point & {
+  z: number
+}
+```
+
+## Export Only What's Necessary
+
+Keep your public API surface minimal by exporting only what needs to be used externally.
+
+```typescript
+// internal.ts - Internal helper (not exported)
+function calculateDistance(a: Point, b: Point): number {
+  return Math.sqrt(Math.pow(b.x - a.x, 2) + Math.pow(b.y - a.y, 2))
+}
+
+// index.ts - Public API
+export interface Point {
+  x: number
+  y: number
+}
+
+export function createPoint(x: number, y: number): Point {
+  return { x, y }
+}
+```
+
+## Use Readonly for Immutable Data
+
+Mark properties as `readonly` when they shouldn't be modified after creation.
+
+```typescript
+interface Config {
+  readonly apiKey: string
+  readonly baseUrl: string
+}
+
+const config: Config = {
+  apiKey: 'secret-key',
+  baseUrl: 'https://api.example.com'
+}
+
+// ❌ Error: Cannot assign to 'apiKey' because it is a read-only property
+config.apiKey = 'new-key'
+```
+
+## Conclusion
+
+Following these TypeScript best practices will help you write cleaner, more maintainable code that takes full advantage of TypeScript's type system.

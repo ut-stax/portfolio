@@ -1,0 +1,91 @@
+# Supabase CLI Configuration
+# https://supabase.com/docs/reference/cli/config
+
+[project]
+id = "your-project-id"
+name = "portfolio"
+
+[api]
+# Enable API features
+enabled = true
+# API port
+port = 54321
+# API URL
+url = "http://localhost:54321"
+# API keys (generate with: supabase projects api-keys)
+api_keys = []
+
+[db]
+# Database port
+port = 54322
+# Database password
+password = "postgres"
+
+[studio]
+# Studio port
+port = 54323
+# Studio URL
+url = "http://localhost:54323"
+
+[storage]
+# Storage API port
+port = 54321
+
+[auth]
+# Auth enabled
+enabled = true
+# Auth site URL
+site_url = "http://localhost:3000"
+# Auth redirect URLs
+additional_redirect_urls = ["https://localhost:3000"]
+# Auth providers
+providers = ["google", "github", "email"]
+# Email auth enabled
+enable_email_auth = true
+# Email double confirm
+enable_email_double_confirm = false
+# Email auto confirm
+enable_email_autoconfirm = false
+
+# Auth JWT settings
+[auth.jwt]
+# JWT secret (generate with: supabase projects api-keys)
+secret = "your-jwt-secret"
+# JWT expiry time
+expiry = 3600
+# JWT refresh token expiry
+refresh_token_expiry = 2592000
+
+# Auth SMTP settings (configure for production)
+[auth.smtp]
+# SMTP admin email
+admin_email = "admin@example.com"
+# SMTP password
+password = "smtp-password"
+# SMTP host
+host = "smtp.example.com"
+# SMTP port
+port = 587
+# SMTP user
+user = "smtp-user"
+
+# Rate limiting
+[auth.rate-limiting]
+# API rate limit
+api_limit = 100
+# Burst limit
+burst_limit = 10
+
+# Webhooks
+[webhooks]
+# Webhooks enabled
+enabled = true
+# Webhooks port
+port = 54321
+
+# Logging
+[logging]
+# Log level
+level = "info"
+# Log format
+format = "json"

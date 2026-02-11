@@ -1,0 +1,35 @@
+{
+  "name": "new-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm --filter web dev",
+    "build": "pnpm --filter web build",
+    "start": "pnpm --filter web start",
+    "lint": "pnpm --filter web lint",
+    "lint:fix": "pnpm --filter web lint:fix",
+    "format": "prettier --write \"apps/**/*.{ts,tsx,js,jsx}\" \"packages/**/*.{ts,tsx,js,jsx}\"",
+    "typecheck": "pnpm --filter web typecheck",
+    "db:generate": "pnpm supabase gen types typescript --local > packages/types/database.ts",
+    "db:migrate": "pnpm supabase db push"
+  },
+  "pnpm": {
+    "workspaces": [
+      "apps/*",
+      "packages/*"
+    ],
+    "peerDependencyRules": {
+      "ignoreMissing": [
+        "eslint"
+      ]
+    }
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3",
+    "eslint": "^9.26.0",
+    "prettier": "^3.5.3",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "supabase": "^1.226.4"
+  }
+}
