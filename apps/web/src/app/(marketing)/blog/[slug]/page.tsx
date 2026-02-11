@@ -70,7 +70,7 @@ This is just the beginning. Excited for what lies ahead! Let's connect, collabor
     tags: ["CyberSecurity", "DeepfakeDetection", "AI", "MachineLearning"],
     publishedAt: "2025-01-15",
     readTime: 6,
-    views: 2431,
+    views: 423,
     coverImage: "/images/blog/cyber-hackathon.jpg",
   },
   "newspaper-feature-dainik-bhaskar": {
@@ -114,7 +114,7 @@ This recognition motivates us to continue working on innovative solutions for a 
     tags: ["Newspaper", "CyberSecurity", "Recognition", "MPPolice"],
     publishedAt: "2025-01-20",
     readTime: 4,
-    views: 2431,
+    views: 423,
     coverImage: "/images/blog/newspaper-feature.jpg",
   },
   "cricket-drs-system-technology": {
@@ -194,7 +194,7 @@ The future of cricket technology is exciting!
     tags: ["Cricket", "DRS", "HawkEye", "UltraEdge", "Technology"],
     publishedAt: "2025-01-25",
     readTime: 7,
-    views: 2431,
+    views: 422,
     coverImage: "/images/blog/drs-technology.jpg",
   },
   "why-cricket-technology-costs-millions": {
@@ -286,7 +286,7 @@ The investment in cricket technology continues to grow as fans demand more trans
     tags: ["Cricket", "Hotspot", "Snickometer", "Cost", "Broadcasting"],
     publishedAt: "2025-02-01",
     readTime: 6,
-    views: 2431,
+    views: 422,
     coverImage: "/images/blog/cricket-tech-cost.jpg",
   },
   "mumbai-indians-data-science": {
@@ -400,7 +400,7 @@ The integration of data science in cricket has transformed how teams prepare and
     tags: ["MumbaiIndians", "DataScience", "Cricket", "Analytics", "IPL"],
     publishedAt: "2025-02-05",
     readTime: 8,
-    views: 2431,
+    views: 422,
     coverImage: "/images/blog/mumbai-indians.jpg",
   },
   "best-it-tech-sports-f1-fifa-nba-mlb": {
@@ -544,7 +544,7 @@ The convergence of sports and technology continues to push boundaries, creating 
     tags: ["F1", "FIFA", "NBA", "MLB", "Technology", "SportsAnalytics"],
     publishedAt: "2025-02-10",
     readTime: 10,
-    views: 2431,
+    views: 422,
     coverImage: "/images/blog/sports-tech.jpg",
   },
 };

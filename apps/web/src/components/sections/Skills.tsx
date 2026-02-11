@@ -19,8 +19,8 @@ interface Skill {
 const skills: Skill[] = [
   // Programming
   { name: "C", category: "programming", proficiency: 85, level: "Intermediate" },
-  { name: "C++", category: "programming", proficiency: 95, level: "Expert" },
-  { name: "Java", category: "programming", proficiency: 92, level: "Expert" },
+  { name: "C++", category: "programming", proficiency: 95, level: "Intermediate" },
+  { name: "Java", category: "programming", proficiency: 92, level: "Intermediate" },
   { name: "Python", category: "programming", proficiency: 85, level: "Intermediate" },
   { name: "SQL", category: "programming", proficiency: 85, level: "Intermediate" },
   // Frontend

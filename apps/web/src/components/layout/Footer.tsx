@@ -113,7 +113,7 @@ export function Footer() {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted">
             <p>© {currentYear} Utkarsh Tripathi. All rights reserved.</p>
             <p className="text-xs">
-              Built with Next.js, TypeScript, Tailwind CSS, and ❤️
+              Built with ❤️ by ut-stax
             </p>
           </div>
         </div>

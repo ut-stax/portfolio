@@ -82,7 +82,7 @@ This is just the beginning!
     coverImage: "/images/blog/cyber-hackathon.jpg",
     publishedAt: "2025-01-15",
     readTime: 6,
-    views: 2431,
+    views: 423,
     featured: true,
   },
   {
@@ -122,7 +122,7 @@ This recognition motivates us to continue working on innovative solutions for a 
     coverImage: "/images/blog/newspaper-feature.jpg",
     publishedAt: "2025-01-20",
     readTime: 4,
-    views: 2431,
+    views: 423,
     featured: true,
   },
   {
@@ -181,7 +181,7 @@ The technology continues to evolve with AI and machine learning playing bigger r
     coverImage: "/images/blog/drs-technology.jpg",
     publishedAt: "2025-01-25",
     readTime: 7,
-    views: 2431,
+    views: 422,
     featured: false,
   },
   {
@@ -247,7 +247,7 @@ The investment in cricket technology continues to grow as fans demand more trans
     coverImage: "/images/blog/cricket-tech-cost.jpg",
     publishedAt: "2025-02-01",
     readTime: 6,
-    views: 2431,
+    views: 422,
     featured: false,
   },
   {
@@ -321,7 +321,7 @@ Data science has become the backbone of modern cricket franchise management, and
     coverImage: "/images/blog/mumbai-indians.jpg",
     publishedAt: "2025-02-05",
     readTime: 8,
-    views: 2431,
+    views: 422,
     featured: false,
   },
   {
@@ -405,7 +405,7 @@ These technologies represent the best of what IT can offer to sports!
     coverImage: "/images/blog/sports-tech.jpg",
     publishedAt: "2025-02-10",
     readTime: 10,
-    views: 2431,
+    views: 422,
     featured: true,
   },
 ];
